@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(255, 237, 252);
+}
+
+.cube__container {
+    width: 250px;
+    height: 250px;
+    perspective: 500px;
+    margin: 200px auto;
+}
+
+.cube {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    transform-style: preserve-3d;
+    animation: turn 10s linear infinite;
+}
+
+.cube__side-one,
+.cube__side-two,
+.cube__side-three,
+.cube__side-four,
+.cube__side-five,
+.cube__side-six {
+    width: 250px;
+    height: 250px;
+    padding: 75px;
+    position: absolute;
+}
+
+.cube__text {
+    font-family: 'Pacifico';
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    display: none;
+}
+
+/* top */
+.cube__side-one {
+    background-color: rgb(121, 165, 253, 0.5);
+    transform: translateY(-125px) rotateX(90deg);
+}
+
+/* bottom */
+.cube__side-two {
+    background-color: rgb(168, 105, 230, 0.5);
+    transform: translateY(125px) rotateX(-90deg);
+}
+
+/* left */
+.cube__side-three {
+    background-color: rgb(255, 55, 95, 0.5);
+    transform: translateX(-125px) rotateY(-90deg);
+}
+
+/* right */
+.cube__side-four {
+    background-color: rgba(252, 172, 73, 0.5);
+    transform: translateX(125px) rotateY(90deg);
+}
+
+/* front */
+.cube__side-five {
+    background-color: rgba(253, 244, 124, 0.5);
+    transform: translateZ(125px);
+}
+
+/* back */
+.cube__side-six {
+    background-color: rgb(147, 254, 147, 0.5);
+    transform: translateZ(-125px) rotateY(180deg);
+}
+
+@keyframes turn {
+    from { transform: rotate(0)}
+    to { transform: rotateX(360deg) rotateY(360deg); }
+}
